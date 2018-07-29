@@ -34,14 +34,14 @@ This service represents a simplified service for demo purposes and does not incl
 ## Prepare your environment
 
 
-Install the Serverless Framework:
+**Install the Serverless Framework**
 
 https://serverless.com/framework/docs/getting-started/
 
 npm install serverless -g
 
 
-Configure AWS Credentials
+**Configure AWS Credentials**
 
 AWS Credentials can be configured in a number of ways.   Choose the option that works best for you. 
 
@@ -53,7 +53,7 @@ https://serverless.com/framework/docs/providers/aws/guide/credentials/
 
 ###### netcoreweather
 
-C# Source 
+**C# Source** 
 
 1. Handler.cs: This file contains 2 classes within the WeatherService namespace. 
 
@@ -75,7 +75,8 @@ This will compile the code create a .zip ready for deployment
 
 The Deploy step is the same for all languages.   The maximizes reusability as numerous teams leveraging several languages can deploy code in a consistent manner.   You will not have retrain your DevOps or Build teams to deploy and maintain your code for different teams. 
 
-   Run:  sls deploy or serverless deploy
+   From the directory containing the serverless.yml file for your project sls deploy or serverless deploy commands
+   
    The deployment creates a CloudFormation template that is used to manage the resulting stack. 
 
 Once your deploy is complete you will see an output similar to below:
