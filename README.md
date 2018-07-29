@@ -11,23 +11,23 @@ This service represents a simplified service for demo purposes and does not incl
 
 ## Technologies used
 
-1. ** Serverless Framework **
-2. ** AWS **
+** 1. Serverless Framework **
+** 2.  AWS **
     - Lambda
     - APIGateway
     - S3
-3. ** dotnetcore2.0 **
-4. ** C# Libraries **
+** 3.  dotnetcore2.0 **
+** 4.  C# Libraries **
    - Amazon.Lambda.Core;
    - Amazon.Lambda.APIGatewayEvents;
    - System;
    - System.Net;
    - System.Collections.Generic;
    - Newtonsoft.Json;
-5. ** Python Modules **
+** 5.  Python Modules **
    - random
    - urlparse
-6. ** NodeJS Libraris **
+** 6.  NodeJS Libraris **
    - querystring
 
 
