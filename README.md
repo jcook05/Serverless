@@ -1,4 +1,4 @@
-Example of an AWS Serverless Project for .Net Core 2.0
+Example of an AWS Serverless Project for .Net Core 2.0, NodeJS and Python.  
 
 This projects contained in this repo are loosely based on the Microsoft Microservices on Docker project: https://docs.microsoft.com/en-us/dotnet/articles/csharp/tutorials/microservices where Docker containers are used.    While containerization definitely has a role to play in modern IT infrastructures containers may not be the best model to use for true RESTful Microservices.   The Serverless model allows the implementation of RESTful Microservices while minimizing infrastructure requirements.   Depending upon the cloud platform leveraged, costs are significantly reduced as well.   This project leverages AWS Lambda and APIGateway which both provide 1 million free uses.  The cost of the services after the 1 million free uses is minimal as well.  
 
@@ -67,6 +67,10 @@ Run the included build.sh or build.cmd scripts.
 
 This will compile the code create a .zip ready for deployment
 
+
+###### nodejsweather
+
+1.  handler.js  
 
 
 
