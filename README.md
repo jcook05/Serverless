@@ -88,7 +88,7 @@ This will compile the code create a .zip ready for deployment
 
 ## Deploy
 
-The Deploy step is the same for all languages.   The maximizes reusability as numerous teams leveraging several languages can deploy code in a consistent manner.   You will not have retrain your DevOps or Build teams to deploy and maintain your code for different teams. 
+The Deploy step is the same for all languages.   This maximizes reusability as numerous teams leveraging several languages can deploy code in a consistent manner.   You will not have retrain your DevOps or Build teams to deploy and maintain your code for different teams. 
 
    From the directory containing the serverless.yml file for your project sls deploy or serverless deploy commands
    
