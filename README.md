@@ -77,7 +77,7 @@ This will compile the code create a .zip ready for deployment
 
 ###### pythonweather
 
-1.  handler.js  
+1.  handler.py  
 
 2. Build:    No build steps are necessary for this project
 
