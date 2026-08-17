@@ -1,0 +1,43 @@
+service: error-logging
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  region: us-west-2
+  runtime: python3.11
+  lambdaHashingVersion: '20201221'
+  environment:
+    slack_channel: https://hooks.slack.com/services/your/slack/webhook
+functions:
+  errorlog:
+    handler: errorlog.logError
+    events:
+    # List of Log Groups to monitor
+      - cloudwatchLog:
+          logGroup: '/aws/lambda/function1'
+          filter: 'ERROR'
+      - cloudwatchLog:
+          logGroup: '/aws/lambda/function2'
+          filter: 'ERROR'
+      - cloudwatchLog:
+          logGroup: '/aws/lambda/function3'
+          filter: 'ERROR'
+  cberrorlog:
+    handler: errorlog.cbLogError
+    events:
+    # List of Code Build logGroups to monitor
+      - cloudwatchLog:
+          logGroup: '/aws/codebuild/p1'
+          filter: '?FAILED ?COMMAND_EXECUTION_ERROR'
+      - cloudwatchLog:
+          logGroup: '/aws/codebuild/p2'
+          filter: '?FAILED ?COMMAND_EXECUTION_ERROR'
+      - cloudwatchLog:
+          logGroup: '/aws/codebuild/p3'
+          filter: '?FAILED ?COMMAND_EXECUTION_ERROR'
+  errorgen:
+    handler: errorgen.errorGen
+
+
+ 
