@@ -1,0 +1,57 @@
+service: eks-deployment
+
+plugins:
+  - serverless-plugin-canary-deployments
+custom:
+  deploymentSettings:
+    alias: live
+    stages:
+      - prod
+    type: Linear10PercentEvery1Minute
+  alerts:
+    dashboards: true
+    stages:
+      - prod
+  
+provider:
+  name: aws
+  stage: ${opt:stage, 'dev'}
+  region: us-west-2
+  runtime: python3.11
+  iam:
+    role:
+      managedPolicies:
+        - 'arn:aws:iam::ACCOUNTID:policy/deployment-verify-policy'      
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - codedeploy:*
+      Resource:
+        - "*"
+  environment:
+    STAGE: ${opt:stage, 'dev'}
+    BASEURL: https://yourbaseurl.com/
+
+functions:
+  verify:
+    handler: deploymentverify.depVerify
+    timeout: 300
+    vpc:
+      securityGroupIds:
+        - your-sg-id
+      subnetIds:
+        - your-private-subnet-id
+    deploymentSettings:
+      alias: live
+      type: Linear10PercentEvery1Minute
+  verify-request:
+    handler: deploymentverify.depVerifyRequest
+    timeout: 30
+    vpc:
+      securityGroupIds:
+        - your-sg-id
+      subnetIds:
+        - your-private-subnet-id
+    deploymentSettings:
+      alias: live
+      type: Linear10PercentEvery1Minute

@@ -1,0 +1,11 @@
+{
+      "APP": "dev-app",
+      "ENV": "dev",
+      "IMAGE": "...",
+      "BUILDLINK": "...",
+      "BRANCH": "...",
+      "RELEASE": "...",
+      "COMMIT": "...",
+      "BUILDNAME": "...",
+      "AUTHOR": "..."
+    }
